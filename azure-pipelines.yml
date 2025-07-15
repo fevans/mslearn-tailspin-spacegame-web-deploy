@@ -1,5 +1,5 @@
 trigger:
-- *
+- '*'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -61,7 +61,7 @@ steps:
 - task: AzureWebApp@1
   displayName: 'Deploy to Azure Web App'
   inputs:
-    azureSubscription: 'evfdev'
+    azureSubscription: 'ResourceManager - Tailspin - Space Game'
     appName: '$(WebAppNameDev)'
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/release'))
